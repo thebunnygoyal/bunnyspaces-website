@@ -81,18 +81,51 @@ function closeRSVP() {
     document.body.style.overflow = 'auto';
 }
 
-function submitRSVP(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+// Handle Netlify form submission with AJAX
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    // Here you would normally send the data to your backend
-    // For now, we'll just show a success message
-    alert(`Thanks ${data.name}! You're on the list for June 22! 🎉\n\nWe'll send details to ${data.email}`);
+    const form = e.target;
+    const formData = new FormData(form);
     
-    closeRSVP();
-    event.target.reset();
-}
+    // Show loading state
+    const submitButton = form.querySelector('.submit-button');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending... 🚀';
+    submitButton.disabled = true;
+    
+    // Submit to Netlify
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        // Success! Show success message
+        form.style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+        
+        // Reset form
+        form.reset();
+        
+        // Close modal after 3 seconds
+        setTimeout(() => {
+            closeRSVP();
+            // Reset for next time
+            form.style.display = 'block';
+            document.getElementById('success-message').style.display = 'none';
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }, 3000);
+    })
+    .catch((error) => {
+        // Error handling
+        alert('Oops! Something went wrong. Please try again! 🐰');
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        console.error('Error:', error);
+    });
+});
 
 function joinCommunity() {
     alert('Community signup coming soon! For now, RSVP for the June 22 event to get on our list! 🐰');
