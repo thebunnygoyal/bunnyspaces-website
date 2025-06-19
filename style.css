@@ -362,6 +362,14 @@ body {
     margin-bottom: var(--space-2xl);
 }
 
+.limited-seats {
+    font-size: 1.2rem;
+    color: var(--yellow);
+    text-shadow: 0 0 20px var(--yellow);
+    margin: var(--space-md) 0;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
 .countdown {
     display: flex;
     justify-content: center;
@@ -420,6 +428,16 @@ body {
     margin-bottom: var(--space-sm);
 }
 
+.detail-card strong {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.address {
+    font-size: 1.1rem;
+    color: var(--cyan);
+}
+
 .sub-text {
     font-size: 0.9rem;
     opacity: 0.8;
@@ -437,6 +455,71 @@ body {
 .map-link:hover {
     text-shadow: 0 0 10px var(--cyan);
     transform: translateX(5px);
+}
+
+/* Pricing Section */
+.pricing-info {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.pricing-title {
+    font-size: 1.8rem;
+    color: var(--yellow);
+    margin-bottom: var(--space-lg);
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background: rgba(123, 47, 191, 0.2);
+    border: 2px solid var(--violet);
+    border-radius: 20px;
+    padding: var(--space-lg);
+    min-width: 200px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.price-card.popular {
+    border-color: var(--cyan);
+    transform: scale(1.05);
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(123, 47, 191, 0.4);
+}
+
+.price-header {
+    font-size: 1.2rem;
+    color: var(--lavender);
+    margin-bottom: var(--space-sm);
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--cyan);
+    text-shadow: 0 0 20px var(--cyan);
+}
+
+.price-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--magenta);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transform: rotate(15deg);
 }
 
 .rsvp-section {
@@ -481,6 +564,13 @@ body {
 .rsvp-button:hover {
     transform: scale(1.1);
     box-shadow: 0 20px 50px rgba(255, 0, 255, 0.5);
+}
+
+.seats-warning {
+    margin-top: var(--space-md);
+    color: var(--yellow);
+    font-size: 1.1rem;
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
 /* Rules Section */
@@ -636,6 +726,8 @@ body {
     max-width: 500px;
     position: relative;
     animation: modal-appear 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes modal-appear {
@@ -670,6 +762,13 @@ body {
     letter-spacing: 2px;
 }
 
+.form-subtitle {
+    text-align: center;
+    color: var(--lavender);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+}
+
 #rsvpForm {
     display: flex;
     flex-direction: column;
@@ -702,6 +801,63 @@ body {
     color: rgba(183, 148, 244, 0.5);
 }
 
+/* Guest Selection */
+.guest-selection {
+    margin: var(--space-md) 0;
+}
+
+.guest-selection label {
+    display: block;
+    color: var(--lavender);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.guest-options {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.guest-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.guest-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.guest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    border: 2px solid var(--cosmic-blue);
+    border-radius: 15px;
+    background: rgba(30, 64, 175, 0.3);
+    transition: all 0.3s ease;
+}
+
+.guest-option input[type="radio"]:checked + .guest-card {
+    border-color: var(--cyan);
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.guest-count {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: var(--space-xs);
+}
+
+.guest-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cyan);
+}
+
 .submit-button {
     background: linear-gradient(45deg, var(--yellow), var(--magenta));
     color: var(--space-black);
@@ -720,6 +876,83 @@ body {
 .submit-button:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 50px rgba(255, 0, 255, 0.5);
+}
+
+/* Success Message */
+#success-message {
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.success-title {
+    color: var(--cyan);
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.success-subtitle {
+    color: var(--lavender);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-lg);
+}
+
+.qr-section {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+    flex-wrap: wrap;
+}
+
+.qr-container {
+    background: rgba(30, 64, 175, 0.2);
+    border: 2px solid var(--cosmic-blue);
+    border-radius: 20px;
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.qr-container h4 {
+    color: var(--yellow);
+    margin-bottom: var(--space-md);
+    font-size: 1.3rem;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: var(--space-md);
+}
+
+.qr-note {
+    color: var(--lavender);
+    font-size: 1.1rem;
+}
+
+.payment-note {
+    color: var(--lavender);
+    margin-top: var(--space-lg);
+    font-size: 1.1rem;
+}
+
+.payment-note a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.payment-note a:hover {
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.confirmation-note {
+    color: var(--yellow);
+    margin-top: var(--space-md);
+    font-size: 1rem;
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
 /* Responsive */
@@ -754,6 +987,24 @@ body {
         font-size: 2rem;
     }
     
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .price-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .guest-options {
+        flex-direction: column;
+    }
+    
+    .guest-card {
+        width: 100%;
+    }
+    
     .rule {
         flex-direction: column;
         text-align: center;
@@ -771,5 +1022,15 @@ body {
     .join-button {
         width: 100%;
         max-width: 300px;
+    }
+    
+    .qr-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
     }
 }
