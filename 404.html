@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in the Anti-Network | Bunny Spaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyan: #00FFFF;
+            --magenta: #FF00FF;
+            --yellow: #FFFF00;
+            --violet: #7B2FBF;
+            --pink: #EC4899;
+            --lavender: #B794F4;
+            --space-black: #0a0a0f;
+            --midnight-purple: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', monospace;
+            background-color: var(--space-black);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--cyan);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.3;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) translateX(0);
+            }
+            to {
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+
+        .error-container {
+            text-align: center;
+            z-index: 10;
+            max-width: 600px;
+        }
+
+        .error-404 {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--cyan), var(--magenta), var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 50px rgba(255, 0, 255, 0.5);
+            animation: pulse-glow 2s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            color: var(--yellow);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px var(--yellow);
+        }
+
+        p {
+            color: var(--lavender);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .bunny-lost {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--yellow), var(--magenta));
+            color: var(--space-black);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cyan);
+            border: 2px solid var(--cyan);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 0, 255, 0.4);
+        }
+
+        .games-hint {
+            background: rgba(123, 47, 191, 0.2);
+            border: 2px solid var(--violet);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .games-hint h2 {
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .games-hint p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .game-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            background: linear-gradient(45deg, var(--violet), var(--pink));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .game-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .error-404 {
+                font-size: 5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles"></div>
+    
+    <div class="error-container">
+        <div class="bunny-lost">🐰❓</div>
+        <div class="error-404">404</div>
+        <h1>Lost in the Anti-Network!</h1>
+        <p>Looks like you wandered off into the networking void. Don't worry, we'll get you back to the fun zone!</p>
+        
+        <div class="actions">
+            <a href="/" class="btn btn-primary">Back to Safety →</a>
+            <a href="/#event" class="btn btn-secondary">Join June 22 Event</a>
+        </div>
+        
+        <div class="games-hint">
+            <h2>🎮 While You're Here...</h2>
+            <p>Play some games! Perfect for avoiding awkward networking conversations.</p>
+            <div class="game-options">
+                <a href="#" class="game-btn" onclick="playGame('bugsweeper')">🐛 Bugsweeper</a>
+                <a href="#" class="game-btn" onclick="playGame('snake')">🐍 Snake</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 5 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDuration = Math.random() * 20 + 10 + 's';
+            
+            const colors = ['#00FFFF', '#FF00FF', '#FFFF00'];
+            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.getElementById('particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 30000);
+        }
+
+        // Create initial particles
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 100);
+        }
+
+        // Continue creating particles
+        setInterval(createParticle, 500);
+
+        // Play game function
+        function playGame(gameType) {
+            alert(`🎮 ${gameType === 'bugsweeper' ? 'Bugsweeper' : 'Snake'} will be available during your next deploy! For now, head back to the main site for anti-networking fun!`);
+        }
+    </script>
+</body>
+</html>
