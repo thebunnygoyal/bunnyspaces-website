@@ -79,6 +79,7 @@
         <div class="container">
             <div class="event-header">
                 <h2 class="section-title">JUNE 22 BOARD GAMES BASH</h2>
+                <div class="limited-seats">🔥 20 FOUNDERS | INVITE ONLY 🔥</div>
                 <div class="countdown" id="countdown">
                     <div class="countdown-item">
                         <span class="countdown-value" id="days">00</span>
@@ -102,24 +103,41 @@
             <div class="event-details">
                 <div class="detail-card">
                     <h3>📍 Location</h3>
-                    <p>The Space - Kolkata</p>
-                    <a href="https://maps.app.goo.gl/BuMUyXV12rN1HmX47" target="_blank" class="map-link">View on Maps →</a>
+                    <p><strong>The Space</strong></p>
+                    <p class="address">Kolkata</p>
+                    <a href="https://maps.app.goo.gl/BuMUyXV12rN1HmX47" target="_blank" class="map-link">Get Directions →</a>
                 </div>
                 <div class="detail-card">
                     <h3>🕐 Time</h3>
-                    <p>5:00 PM - 7:00 PM</p>
-                    <p class="sub-text">June 22, 2025</p>
+                    <p><strong>5:00 PM - 7:00 PM</strong></p>
+                    <p class="sub-text">Sunday, June 22, 2025</p>
                 </div>
                 <div class="detail-card">
                     <h3>🎲 What's Happening</h3>
-                    <p>Board Games</p>
-                    <p>Casual Vibes</p>
-                    <p>Pure Fun</p>
+                    <p>• Board Games Galore</p>
+                    <p>• Zero Networking</p>
+                    <p>• 100% Pure Fun</p>
+                </div>
+            </div>
+            
+            <div class="pricing-info">
+                <h3 class="pricing-title">Entry Fee</h3>
+                <div class="pricing-cards">
+                    <div class="price-card">
+                        <div class="price-header">1 GUEST</div>
+                        <div class="price-amount">₹599/-</div>
+                    </div>
+                    <div class="price-card popular">
+                        <div class="price-header">2 GUESTS</div>
+                        <div class="price-amount">₹1099/-</div>
+                        <div class="price-badge">BRING A FRIEND!</div>
+                    </div>
                 </div>
             </div>
             
             <div class="rsvp-section">
-                <button class="rsvp-button" onclick="showRSVP()">RSVP NOW - IT'S FREE!</button>
+                <button class="rsvp-button" onclick="showRSVP()">REGISTER NOW →</button>
+                <p class="seats-warning">⚡ Limited Seats - First Come, First Play!</p>
             </div>
         </div>
     </section>
@@ -179,7 +197,7 @@
             <h2 class="section-title">READY TO PLAY?</h2>
             <p class="join-subtitle">Join the most fun community of founders who've forgotten how to network</p>
             <div class="join-buttons">
-                <button class="join-button primary" onclick="showRSVP()">RSVP for June 22</button>
+                <button class="join-button primary" onclick="showRSVP()">REGISTER for June 22</button>
                 <button class="join-button secondary" onclick="joinCommunity()">Join the Community</button>
             </div>
         </div>
@@ -196,7 +214,9 @@
     <div id="rsvpModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeRSVP()">&times;</span>
-            <h2>RSVP for June 22 Event</h2>
+            <h2>Register for June 22 Event</h2>
+            <p class="form-subtitle">Complete registration + payment to secure your spot!</p>
+            
             <!-- Netlify Forms Integration -->
             <form id="rsvpForm" name="bunny-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <!-- Hidden field for Netlify -->
@@ -208,18 +228,61 @@
                 
                 <input type="text" name="name" placeholder="Your Name (no titles!)" required>
                 <input type="email" name="email" placeholder="Email (for event updates only)" required>
+                <input type="tel" name="phone" placeholder="WhatsApp Number" pattern="[0-9]{10}" required>
+                
+                <div class="guest-selection">
+                    <label>Number of Guests:</label>
+                    <div class="guest-options">
+                        <label class="guest-option">
+                            <input type="radio" name="guests" value="1" required>
+                            <span class="guest-card">
+                                <span class="guest-count">1 Guest</span>
+                                <span class="guest-price">₹599/-</span>
+                            </span>
+                        </label>
+                        <label class="guest-option">
+                            <input type="radio" name="guests" value="2" required>
+                            <span class="guest-card">
+                                <span class="guest-count">2 Guests</span>
+                                <span class="guest-price">₹1099/-</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
                 <select name="type" required>
                     <option value="">Who are you?</option>
                     <option value="founder">Founder (recovering networker)</option>
                     <option value="builder">Builder (code > cards)</option>
                     <option value="playful">Playful Human (fun is my startup)</option>
                 </select>
+                
                 <textarea name="fun" placeholder="What's your idea of fun? (Wrong answers only)" rows="3"></textarea>
-                <button type="submit" class="submit-button">Count Me In! 🎲</button>
+                
+                <button type="submit" class="submit-button">Complete Registration →</button>
             </form>
-            <div id="success-message" style="display:none; text-align:center; color: var(--cyan); margin-top: 20px;">
-                <h3>🎉 You're on the list!</h3>
-                <p>We'll send details to your email. No networking allowed!</p>
+            
+            <!-- Success Message with QR Codes -->
+            <div id="success-message" style="display:none;">
+                <h3 class="success-title">🎉 Almost There!</h3>
+                <p class="success-subtitle">Complete your payment to secure your spot:</p>
+                
+                <div class="qr-section">
+                    <div id="qr-single" class="qr-container" style="display:none;">
+                        <h4>Scan to Pay ₹599/-</h4>
+                        <img src="https://i.imgur.com/YourQR1.png" alt="Payment QR for 1 Guest" class="qr-code">
+                        <p class="qr-note">1 Guest Entry</p>
+                    </div>
+                    
+                    <div id="qr-double" class="qr-container" style="display:none;">
+                        <h4>Scan to Pay ₹1099/-</h4>
+                        <img src="https://i.imgur.com/YourQR2.png" alt="Payment QR for 2 Guests" class="qr-code">
+                        <p class="qr-note">2 Guests Entry</p>
+                    </div>
+                </div>
+                
+                <p class="payment-note">📱 After payment, send screenshot to WhatsApp: <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a></p>
+                <p class="confirmation-note">We'll confirm your spot within 30 minutes!</p>
             </div>
         </div>
     </div>
