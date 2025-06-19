@@ -79,6 +79,9 @@ function showRSVP() {
 function closeRSVP() {
     document.getElementById('rsvpModal').style.display = 'none';
     document.body.style.overflow = 'auto';
+    // Reset form visibility
+    document.getElementById('rsvpForm').style.display = 'flex';
+    document.getElementById('success-message').style.display = 'none';
 }
 
 // Handle Netlify form submission with AJAX
@@ -87,6 +90,9 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     
     const form = e.target;
     const formData = new FormData(form);
+    
+    // Get selected guest count
+    const guestCount = formData.get('guests');
     
     // Show loading state
     const submitButton = form.querySelector('.submit-button');
@@ -101,22 +107,25 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         body: new URLSearchParams(formData).toString()
     })
     .then(() => {
-        // Success! Show success message
+        // Success! Show success message with appropriate QR code
         form.style.display = 'none';
         document.getElementById('success-message').style.display = 'block';
         
+        // Show appropriate QR code based on guest count
+        if (guestCount === '1') {
+            document.getElementById('qr-single').style.display = 'block';
+            document.getElementById('qr-double').style.display = 'none';
+        } else {
+            document.getElementById('qr-single').style.display = 'none';
+            document.getElementById('qr-double').style.display = 'block';
+        }
+        
         // Reset form
         form.reset();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
         
-        // Close modal after 3 seconds
-        setTimeout(() => {
-            closeRSVP();
-            // Reset for next time
-            form.style.display = 'block';
-            document.getElementById('success-message').style.display = 'none';
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }, 3000);
+        // Don't auto-close - let user complete payment
     })
     .catch((error) => {
         // Error handling
@@ -128,7 +137,8 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
 });
 
 function joinCommunity() {
-    alert('Community signup coming soon! For now, RSVP for the June 22 event to get on our list! 🐰');
+    // Open WhatsApp for community join
+    window.open('https://wa.me/message/YOUR_WHATSAPP_LINK', '_blank');
 }
 
 // Close modal when clicking outside
