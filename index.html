@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunny Spaces - Where Founders Come to Play 🐰</title>
+    <meta name="description" content="Anti-networking community for founders and builders. No pitches, no business talk, just pure fun!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particle-container" id="particles"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="bunny">🐰</span>
+                <span class="logo-text">BUNNY SPACES</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#event" class="nav-link">June 22 Event</a>
+                <a href="#rules" class="nav-link">The Rules</a>
+                <a href="#join" class="nav-link cta-button">Join the Fun</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word-1">NO</span>
+                <span class="word-2">NETWORKING</span>
+                <span class="word-3">ALLOWED</span>
+            </h1>
+            <p class="hero-subtitle">Where founders come to play, not pitch</p>
+            <div class="hero-icons">
+                <span class="floating-icon">🎮</span>
+                <span class="floating-icon">🎯</span>
+                <span class="floating-icon">🎲</span>
+                <span class="floating-icon">🏓</span>
+                <span class="floating-icon">🎪</span>
+            </div>
+            <a href="#event" class="hero-cta">Join June 22 Board Games Event →</a>
+        </div>
+    </section>
+
+    <section id="manifesto" class="manifesto">
+        <div class="container">
+            <h2 class="section-title">THE ANTI-MANIFESTO</h2>
+            <div class="manifesto-grid">
+                <div class="manifesto-item">
+                    <span class="icon">🚫</span>
+                    <h3>No Business Cards</h3>
+                    <p>Leave them at home. We don't care about your title.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="icon">🎮</span>
+                    <h3>Just Play</h3>
+                    <p>Board games, video games, mind games - anything but business games.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="icon">📵</span>
+                    <h3>Phones Down</h3>
+                    <p>Instagram can wait. LinkedIn definitely can wait.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="icon">🤝</span>
+                    <h3>Real Connections</h3>
+                    <p>Make friends, not contacts. Build bonds, not networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="event" class="event-section">
+        <div class="container">
+            <div class="event-header">
+                <h2 class="section-title">JUNE 22 BOARD GAMES BASH</h2>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">DAYS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">HOURS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">MINS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">SECS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-details">
+                <div class="detail-card">
+                    <h3>📍 Location</h3>
+                    <p>The Space - Kolkata</p>
+                    <a href="https://maps.app.goo.gl/BuMUyXV12rN1HmX47" target="_blank" class="map-link">View on Maps →</a>
+                </div>
+                <div class="detail-card">
+                    <h3>🕐 Time</h3>
+                    <p>5:00 PM - 7:00 PM</p>
+                    <p class="sub-text">June 22, 2025</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🎲 What's Happening</h3>
+                    <p>Board Games</p>
+                    <p>Casual Vibes</p>
+                    <p>Pure Fun</p>
+                </div>
+            </div>
+            
+            <div class="rsvp-section">
+                <button class="rsvp-button" onclick="showRSVP()">RSVP NOW - IT'S FREE!</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="rules-section">
+        <div class="container">
+            <h2 class="section-title">THE NON-NEGOTIABLES</h2>
+            <div class="rules-list">
+                <div class="rule" data-number="1">
+                    <span class="rule-icon">🚫</span>
+                    <div class="rule-content">
+                        <h3>Networking is a Cuss Word</h3>
+                        <p>Say it and you buy everyone a round of snacks</p>
+                    </div>
+                </div>
+                <div class="rule" data-number="2">
+                    <span class="rule-icon">🤐</span>
+                    <div class="rule-content">
+                        <h3>No Business Talk</h3>
+                        <p>We don't care about your startup's runway</p>
+                    </div>
+                </div>
+                <div class="rule" data-number="3">
+                    <span class="rule-icon">🎪</span>
+                    <div class="rule-content">
+                        <h3>Fun is Mandatory</h3>
+                        <p>If you're not laughing, you're doing it wrong</p>
+                    </div>
+                </div>
+                <div class="rule" data-number="4">
+                    <span class="rule-icon">📱</span>
+                    <div class="rule-content">
+                        <h3>Phones Stay in Pockets</h3>
+                        <p>Unless you're taking a group selfie</p>
+                    </div>
+                </div>
+                <div class="rule" data-number="5">
+                    <span class="rule-icon">🤝</span>
+                    <div class="rule-content">
+                        <h3>Introverts & Extroverts Welcome</h3>
+                        <p>We have games for all personality types</p>
+                    </div>
+                </div>
+                <div class="rule" data-number="6">
+                    <span class="rule-icon">🎯</span>
+                    <div class="rule-content">
+                        <h3>Must Be a Founder/Builder/Playful Human</h3>
+                        <p>If you take life too seriously, this isn't for you</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="join-section">
+        <div class="container">
+            <h2 class="section-title">READY TO PLAY?</h2>
+            <p class="join-subtitle">Join the most fun community of founders who've forgotten how to network</p>
+            <div class="join-buttons">
+                <button class="join-button primary" onclick="showRSVP()">RSVP for June 22</button>
+                <button class="join-button secondary" onclick="joinCommunity()">Join the Community</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Bunny Spaces | Where business cards go to die 🐰</p>
+            <p class="footer-tagline">Made with fun, not frameworks</p>
+        </div>
+    </footer>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRSVP()">&times;</span>
+            <h2>RSVP for June 22 Event</h2>
+            <form id="rsvpForm" onsubmit="submitRSVP(event)">
+                <input type="text" name="name" placeholder="Your Name (no titles!)" required>
+                <input type="email" name="email" placeholder="Email (for event updates only)" required>
+                <select name="type" required>
+                    <option value="">Who are you?</option>
+                    <option value="founder">Founder (recovering networker)</option>
+                    <option value="builder">Builder (code > cards)</option>
+                    <option value="playful">Playful Human (fun is my startup)</option>
+                </select>
+                <textarea name="fun" placeholder="What's your idea of fun? (Wrong answers only)" rows="3"></textarea>
+                <button type="submit" class="submit-button">Count Me In! 🎲</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
