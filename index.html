@@ -37,7 +37,7 @@
             </h1>
             <p class="hero-subtitle">Where founders come to play, not pitch</p>
             <div class="hero-icons">
-                <span class="floating-icon">🎮</span>
+                <span class="floating-icon" onclick="showGameHint()">🎮</span>
                 <span class="floating-icon">🎯</span>
                 <span class="floating-icon">🎲</span>
                 <span class="floating-icon">🏓</span>
@@ -235,6 +235,9 @@
         <div class="container">
             <p>© 2025 Bunny Spaces | Where business cards go to die 🐰</p>
             <p class="footer-tagline">Made with fun, not frameworks</p>
+            <p class="secret-hint" style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">
+                Psst... found the Konami code? Try clicking the 🎮 icon above for more surprises!
+            </p>
         </div>
     </footer>
 
@@ -320,6 +323,32 @@
                 
                 <button onclick="closeRSVP()" class="submit-button" style="margin-top: 20px;">Close</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Secret Games Modal -->
+    <div id="gamesModal" class="modal">
+        <div class="modal-content games-modal">
+            <span class="close" onclick="closeGames()">&times;</span>
+            <h2 class="games-title">🎮 SECRET GAMES ROOM</h2>
+            <p class="games-subtitle">No networking allowed, just pure gaming!</p>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <span class="game-icon">🐛💣</span>
+                    <h3>Bugsweeper</h3>
+                    <p>Clear the bugs without hitting a mine!</p>
+                    <button class="game-button" onclick="openNetlifyGame('bugsweeper')">Play Bugsweeper →</button>
+                </div>
+                <div class="game-card">
+                    <span class="game-icon">🐍</span>
+                    <h3>Snake</h3>
+                    <p>The classic time-waster for anti-networkers!</p>
+                    <button class="game-button" onclick="openNetlifyGame('snake')">Play Snake →</button>
+                </div>
+            </div>
+            
+            <p class="games-note">🎯 Pro tip: These games are perfect for avoiding business conversations!</p>
         </div>
     </div>
 
