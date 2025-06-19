@@ -1,10 +1,28 @@
 # 🐰 Bunny Spaces - Where Founders Come to Play
 
-## 🎯 Project Status
+## 🎯 Deployment Status
 - **Live Site**: Deployed on Netlify ✅
-- **GitHub Repository**: https://github.com/thebunnygoyal/bunnyspaces-website
-- **Backend API**: https://app-bunnyspaces-api.azurewebsites.net (optional - Netlify handles forms!)
-- **Launch Date**: June 22, 2025 Event
+- **Form Handling**: Netlify Forms (100 free submissions/month) ✅
+- **Domain**: bunnyspaces.club (configure in Netlify dashboard)
+
+## 📊 Netlify Free Tier Features
+### ✅ What's Included:
+- **100 form submissions/month** (perfect for RSVPs!)
+- **100GB bandwidth/month**
+- **300 build minutes/month**
+- **Automatic SSL certificate**
+- **Custom domain support**
+- **Continuous deployment from GitHub**
+
+### ❌ What's NOT Included:
+- Database (but form submissions are stored!)
+- Server-side functions beyond 125k requests/month
+
+### 💡 Database Alternatives (if needed):
+- **Keep using Netlify Forms** as your database (export CSV anytime)
+- **Supabase**: 500MB PostgreSQL free
+- **Google Sheets**: Connect via Zapier/Make
+- **Airtable**: 1,200 records free
 
 ## 🧠 Product Intelligence
 - **Problem**: Founders are exhausted from fake networking events
@@ -21,32 +39,30 @@
 ## 🚀 Tech Stack
 - **Frontend**: Static HTML/CSS/JS
 - **Hosting**: Netlify (auto-deploy from GitHub)
-- **Form Handling**: Netlify Forms (no backend needed!)
+- **Form Handling**: Netlify Forms
 - **Styling**: Custom CSS with neon arcade aesthetics
 - **Animations**: Pure CSS animations for performance
 
-## 📝 Netlify Forms Setup
+## 📝 Netlify Setup Instructions
 
-The RSVP form is now integrated with Netlify Forms! Here's what's included:
+### 1. Domain Configuration:
+```
+Netlify Dashboard → Domain settings → Add custom domain
+Add: bunnyspaces.club
+Follow DNS instructions
+```
 
-### Form Features:
-- **Automatic spam protection** with honeypot field
-- **AJAX submission** for smooth UX (no page reload)
-- **Success message** display after submission
-- **Form data** stored in Netlify dashboard
+### 2. Form Notifications:
+```
+Netlify Dashboard → Forms → Settings → Form notifications
+Add email notification for instant RSVP alerts
+```
 
-### To Access Form Submissions:
-1. Log into your Netlify account
-2. Go to your site dashboard
-3. Click on "Forms" in the navigation
-4. You'll see all RSVP submissions there!
-5. You can also set up email notifications for new submissions
-
-### Form Fields Collected:
-- Name (no titles allowed! 😄)
-- Email 
-- Type (Founder/Builder/Playful Human)
-- Fun idea (wrong answers only)
+### 3. View Form Submissions:
+```
+Netlify Dashboard → Forms → bunny-rsvp
+Download as CSV or integrate with Zapier
+```
 
 ## 🎨 Design Philosophy
 - **Colors**: Neon Cyan (#00FFFF), Electric Magenta (#FF00FF), Laser Yellow (#FFFF00)
@@ -54,23 +70,17 @@ The RSVP form is now integrated with Netlify Forms! Here's what's included:
 - **Typography**: Orbitron font for that retro-futuristic feel
 - **Animations**: Floating particles, glowing text, bouncing elements
 
-## 💰 Economics
-- **Hosting**: Free on Netlify! 
-- **Forms**: Free up to 100 submissions/month
-- **Domain**: bunnyspaces.club (configure in Netlify settings)
-- **Azure Backend**: Optional ($18/month if needed)
+## 💰 Cost Structure
+- **Hosting**: FREE on Netlify!
+- **Forms**: FREE (up to 100/month)
+- **Domain**: ~$12/year (bunnyspaces.club)
+- **Total**: Just the domain cost!
 
 ## 📊 Key Metrics
 - **Performance**: Lighthouse score 95+
 - **Mobile**: Fully responsive design
 - **Load Time**: < 2 seconds
 - **Form Submissions**: Track in Netlify dashboard
-
-## 🔗 Quick Links
-- [Netlify Dashboard](https://app.netlify.com)
-- [Form Submissions](https://app.netlify.com/sites/YOUR-SITE-NAME/forms)
-- [Azure Portal](https://portal.azure.com) (if using backend)
-- [Event Location](https://maps.app.goo.gl/BuMUyXV12rN1HmX47)
 
 ## 🛠️ Local Development
 ```bash
@@ -87,14 +97,8 @@ python3 -m http.server 8000
 ## 🚀 Deployment
 The site automatically deploys to Netlify when you push to the `main` branch!
 
-## 🌐 Domain Setup (Netlify)
-1. In Netlify dashboard → Domain settings
-2. Add custom domain: bunnyspaces.club
-3. Follow Netlify's DNS configuration instructions
-4. SSL certificate is automatic!
-
 ## 📝 Future Enhancements
-- Export form data to Google Sheets
+- Connect forms to Google Sheets via Zapier
 - WhatsApp integration for instant RSVPs
 - Community member portal
 - Event photo gallery
