@@ -1,68 +1,101 @@
-# 🐰 Bunny Spaces - Where Founders Come to Play
+# 🐰 BUNNY SPACES - Board Game Night Registration
 
-## 🎯 Deployment Status
-- **Live Site**: https://bunnyspaces.netlify.app/ ✅
-- **Form Handling**: Netlify Forms (100 free submissions/month) ✅
-- **Domain**: bunnyspaces.club (configure in Netlify dashboard)
+## 🚀 Your Website is LIVE!
 
-## 📊 Netlify Free Tier Features
-### ✅ What's Included:
-- **100 form submissions/month** (perfect for RSVPs!)
-- **100GB bandwidth/month**
-- **300 build minutes/month**
-- **Automatic SSL certificate**
-- **Custom domain support**
-- **Continuous deployment from GitHub**
+🌐 **Live URL**: https://bunnyspaces.netlify.app/
 
-### ❌ What's NOT Included:
-- Database (but form submissions are stored!)
-- Server-side functions beyond 125k requests/month
+## ✅ What's Been Updated
 
-### 💡 Database Alternatives (if needed):
-- **Keep using Netlify Forms** as your database (export CSV anytime)
-- **Supabase**: 500MB PostgreSQL free
-- **Google Sheets**: Connect via Zapier/Make
-- **Airtable**: 1,200 records free
+### 1. **Enhanced Registration Form**
+- Added phone number field for WhatsApp contact
+- Guest selection option (1 guest = ₹599, 2 guests = ₹1099)
+- Form connected to Netlify database
 
-## 🧠 Product Intelligence
-- **Problem**: Founders are exhausted from fake networking events
-- **Solution**: Anti-networking community focused on genuine fun and connection
-- **User**: Founders, builders, and playful humans who value authenticity
-- **Revenue Model**: Future community membership and event sponsorships
+### 2. **Payment Flow Integration**
+- After form submission, users see payment QR codes
+- Different QR codes shown based on guest selection
+- Clear payment instructions with WhatsApp contact
 
-## ⚡ Core Features (MVP)
-1. **Landing Page**: Animated hero with "No Networking" manifesto ✅
-2. **June 22 Event Page**: Board games event with RSVP functionality ✅
-3. **Community Rules**: Bold display of non-negotiables ✅
-4. **RSVP Form**: Netlify Forms integration for zero-backend data collection ✅
+### 3. **Improved Event Details**
+- Location section with "Get Directions" link
+- Pricing cards showing entry fees
+- "20 FOUNDERS | INVITE ONLY" exclusivity badge
+- Limited seats warning
 
-## 🚀 Tech Stack
-- **Frontend**: Static HTML/CSS/JS
-- **Hosting**: Netlify (auto-deploy from GitHub)
-- **Form Handling**: Netlify Forms
-- **Styling**: Custom CSS with neon arcade aesthetics
-- **Animations**: Pure CSS animations for performance
+### 4. **Layout Fixes**
+- Better mobile responsiveness
+- Improved spacing and visual hierarchy
+- Professional pricing display
 
-## 📝 Netlify Setup Instructions
+## 🔧 IMPORTANT: Complete These Steps
 
-### 1. Domain Configuration:
+### 1. **Add Your Payment QR Codes**
+Replace the placeholder QR codes in `index.html`:
+
+1. Find these sections:
+   ```html
+   <!-- Replace this placeholder with actual QR code image URL -->
+   <div class="qr-code" style="...">
+       [QR Code for ₹599 Payment]
+   </div>
+   ```
+
+2. Replace with your actual QR code images:
+   ```html
+   <img src="YOUR_QR_CODE_URL_599" alt="Payment QR for 1 Guest" class="qr-code">
+   ```
+
+   You can either:
+   - Upload QR codes to your repo and use relative URLs
+   - Use image hosting service like Imgur
+   - Use any CDN
+
+### 2. **Update WhatsApp Number**
+In `index.html`, find and update:
+```html
+<a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXXXXXXX</a>
 ```
-Netlify Dashboard → Domain settings → Add custom domain
-Add: bunnyspaces.club
-Follow DNS instructions
+Replace `XXXXXXXXXX` with your actual WhatsApp number (without spaces or dashes).
+
+### 3. **Update Community Link** (Optional)
+In `script.js`, update the community WhatsApp group link:
+```javascript
+window.open('https://wa.me/message/YOUR_WHATSAPP_LINK', '_blank');
 ```
 
-### 2. Form Notifications:
-```
-Netlify Dashboard → Forms → Settings → Form notifications
-Add email notification for instant RSVP alerts
-```
+## 📊 Form Submissions
 
-### 3. View Form Submissions:
-```
-Netlify Dashboard → Forms → bunny-rsvp
-Download as CSV or integrate with Zapier
-```
+Check your RSVPs at:
+1. Log into [Netlify](https://app.netlify.com)
+2. Select your site
+3. Go to **Forms** → **bunny-rsvp**
+4. You'll see all submissions with:
+   - Name
+   - Email
+   - Phone number
+   - Number of guests selected
+   - Type of attendee
+   - Fun idea
+
+You can:
+- Download as CSV
+- Set up email notifications
+- Integrate with services like Zapier
+
+## 🎯 Marketing Your Event
+
+Share your anti-networking revolution:
+- **Website**: https://bunnyspaces.netlify.app/
+- **Tagline**: "NO NETWORKING ALLOWED - Where founders come to play, not pitch"
+- **Date**: Sunday, June 22, 2025, 5-7 PM
+- **Location**: The Space, Kolkata
+
+## 💡 Pro Tips
+
+1. **Test the Form**: Submit a test registration to ensure everything works
+2. **Monitor Registrations**: Check Netlify Forms dashboard regularly
+3. **Payment Tracking**: Keep a spreadsheet matching form submissions with payments
+4. **Confirm Spots**: Send WhatsApp confirmations after payment verification
 
 ## 🎨 Design Philosophy
 - **Colors**: Neon Cyan (#00FFFF), Electric Magenta (#FF00FF), Laser Yellow (#FFFF00)
@@ -98,11 +131,10 @@ python3 -m http.server 8000
 The site automatically deploys to Netlify when you push to the `main` branch!
 
 ## 📝 Future Enhancements
-- Connect forms to Google Sheets via Zapier
-- WhatsApp integration for instant RSVPs
-- Community member portal
 - Event photo gallery
+- Community member portal
 - Interactive games on the website
+- More event types
 
 ## 🐰 The Rules
 1. Networking is a cuss word
@@ -117,4 +149,4 @@ Try the Konami code on the website: ↑ ↑ ↓ ↓ ← → ← → B A
 
 ---
 
-*Made with fun, not frameworks* 🎮
+*Made with fun, not frameworks* 🎲
