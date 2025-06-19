@@ -197,7 +197,15 @@
         <div class="modal-content">
             <span class="close" onclick="closeRSVP()">&times;</span>
             <h2>RSVP for June 22 Event</h2>
-            <form id="rsvpForm" onsubmit="submitRSVP(event)">
+            <!-- Netlify Forms Integration -->
+            <form id="rsvpForm" name="bunny-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Hidden field for Netlify -->
+                <input type="hidden" name="form-name" value="bunny-rsvp" />
+                <!-- Honeypot field for spam protection -->
+                <p style="display:none">
+                    <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
+                
                 <input type="text" name="name" placeholder="Your Name (no titles!)" required>
                 <input type="email" name="email" placeholder="Email (for event updates only)" required>
                 <select name="type" required>
@@ -209,6 +217,10 @@
                 <textarea name="fun" placeholder="What's your idea of fun? (Wrong answers only)" rows="3"></textarea>
                 <button type="submit" class="submit-button">Count Me In! 🎲</button>
             </form>
+            <div id="success-message" style="display:none; text-align:center; color: var(--cyan); margin-top: 20px;">
+                <h3>🎉 You're on the list!</h3>
+                <p>We'll send details to your email. No networking allowed!</p>
+            </div>
         </div>
     </div>
 
