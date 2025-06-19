@@ -84,6 +84,41 @@ function closeRSVP() {
     document.getElementById('success-message').style.display = 'none';
 }
 
+// Games Modal functions
+function showGames() {
+    document.getElementById('gamesModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGames() {
+    document.getElementById('gamesModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function showGameHint() {
+    // Show games modal when clicking the game controller icon
+    showGames();
+}
+
+// Open Netlify games
+function openNetlifyGame(gameType) {
+    // These games are typically available during deploy preview
+    // We'll open them in a new window with Netlify's deploy URL pattern
+    const deployUrl = window.location.origin;
+    
+    if (gameType === 'bugsweeper') {
+        // Try to open the Netlify Bugsweeper game
+        alert('🐛 Bugsweeper will be available during your next deploy! For now, enjoy the event registration. 🎮');
+        // In production, you might have: window.open(deployUrl + '/.netlify/functions/bugsweeper', '_blank');
+    } else if (gameType === 'snake') {
+        // Try to open the Netlify Snake game
+        alert('🐍 Snake will be available during your next deploy! For now, focus on anti-networking! 🎮');
+        // In production, you might have: window.open(deployUrl + '/.netlify/functions/snake', '_blank');
+    }
+    
+    // Alternative: Create custom implementations or embed the games directly
+}
+
 // Handle Netlify form submission with AJAX
 document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -143,9 +178,13 @@ function joinCommunity() {
 
 // Close modal when clicking outside
 window.onclick = function(event) {
-    const modal = document.getElementById('rsvpModal');
-    if (event.target == modal) {
+    const rsvpModal = document.getElementById('rsvpModal');
+    const gamesModal = document.getElementById('gamesModal');
+    
+    if (event.target == rsvpModal) {
         closeRSVP();
+    } else if (event.target == gamesModal) {
+        closeGames();
     }
 }
 
@@ -186,7 +225,7 @@ document.addEventListener('keydown', (e) => {
 
 function activatePartyMode() {
     document.body.style.animation = 'party-mode 2s ease infinite';
-    alert('🎉 PARTY MODE ACTIVATED! You found the secret! 🐰');
+    alert('🎉 PARTY MODE ACTIVATED! You found the secret! Want more secrets? Try clicking the 🎮 icon... 🐰');
     setTimeout(() => {
         document.body.style.animation = '';
     }, 10000);
